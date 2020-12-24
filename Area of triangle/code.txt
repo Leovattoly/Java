@@ -1,0 +1,48 @@
+import java.util.Scanner;  // Import the Scanner class
+
+public class Triangle{
+    
+   public static void main (String args[]) 
+    {   
+       
+      Scanner s= new Scanner(System.in);
+      double b[] = new double[2];
+      double h[] = new double[2];
+      double area[]= new double[2];
+        
+        // inputs from user end
+        for (int i = 0 ;i<2;++i)
+        {
+         System.out.println("Enter the Base of the Triangle:");
+          b[i]= s.nextDouble();
+ 
+         System.out.println("Enter the height of the Triangle:");
+          h[i]= s.nextDouble();
+        }
+ 
+          for (int i = 0 ;i<2;++i)
+        {
+            //Area = (base*height)/2
+                 
+       area[i]=(b[i]*h[i])/2;
+        }
+      if(area[0]>area[1])
+      {
+          System.out.println("Triangle with larger area:");
+          System.out.println("Base: "+b[0]);
+          System.out.println("Height: "+h[0]);
+          System.out.println("Area of Triangle is: " + area[0]);
+      }
+      else if(area[0]<area[1])
+      {
+          System.out.println("Triangle with larger area:");
+          System.out.println("Base: "+b[1]);
+          System.out.println("Height: "+h[1]);
+          System.out.println("Area of Triangle is: " + area[1]);
+      }
+      else
+      {
+           System.out.println("Area of Triangle is same: " + area[1]);
+      }
+   }
+}

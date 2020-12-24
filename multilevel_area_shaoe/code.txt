@@ -1,0 +1,102 @@
+import java.util.*;
+
+// base class 
+
+class shape
+{
+    public float Circle_Area;
+    public float Square_Area;
+    public float Triangle_Area;
+    public float Sphere_Area;
+    public float Cube_Area;
+    public void display() 
+    { 
+        System.out.println("Area of circle: "+Circle_Area);
+         System.out.println("Area of Square: "+Square_Area);
+          System.out.println("Area of Triangle: "+Triangle_Area);
+           System.out.println("Area of Spehere: "+Sphere_Area);
+            System.out.println("Area of Cube: "+Cube_Area);
+            
+    } 
+}
+
+class Circle extends shape
+{
+    public float Radius;
+    public void Area()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter the Radius value : ");
+        Radius = sc.nextFloat();
+        Circle_Area = 3.14 * Radius * Radius;
+    }
+}
+class Square extends shape
+{
+    public float Length_of_side;
+    public void Area()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter the side value : ");
+        Length_of_side = sc.nextFloat();
+        Square_Area = Length_of_side*Length_of_side;
+    }
+}
+
+class Triangle extends shape
+{
+    public float base;
+    public float height;
+    public void Area()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter the base value : ");
+        base = sc.nextFloat();
+        System.out.print("Enter the height value : ");
+        height = sc.nextFloat();
+        Triangle_Area = (0.5)*base*height;
+    }
+}
+
+class Sphere extends shape
+{
+    public float Radius;
+    public void Area()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter the Radius value : ");
+        Radius = sc.nextFloat();
+        Sphere_Area = 4*(3.14)*Radius*Radius;
+    }
+}
+
+class Cube extends shape
+{
+    public float Length_of_side;
+    public void Area()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter the length of a side value : ");
+        Length_of_side = sc.nextFloat();
+        Cube_Area = 6*(3.14)*Length_of_side*Length_of_side;
+    }
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		shape obj = new shape();
+		Circle c = new Circle();
+		c.Area();
+		Square s = new Square();
+		s.Area();
+		Triangle t = new Triangle();
+		t.Area();
+		Sphere sp = new Sphere();
+		sp.Area();
+		Cube cu = new Cube();
+		cu.Area();
+		obj.display();
+	}
+}

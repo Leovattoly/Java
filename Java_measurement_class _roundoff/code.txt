@@ -1,0 +1,56 @@
+import java.lang.Math;  // importing library for roud function
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    // creating local variables
+	    Float k_m,m_,m_m;
+	    // creating acanner for inputing the float values
+        Scanner scan = new Scanner( System.in );
+        System.out.print("Enter the Kilometer value : ");
+        k_m = scan.nextFloat();
+		System.out.print("Enter the meter value : ");
+        m_ = scan.nextFloat();
+		System.out.print("Enter the millimeter value : ");
+        m_m = scan.nextFloat();
+        
+        // creating new object for Measurement Class
+        Measurement obj = new Measurement(k_m,m_,m_m);
+        
+		System.out.println("Following are the rounded values:");
+		System.out.println("Kilometer:");
+	    obj.km_roundoff();
+	    System.out.println("Meter:");
+	    obj.m_roundoff();
+	    System.out.println("Millimeter:");
+	    obj.mm_roundoff();
+	}
+}
+
+class Measurement{
+    
+    float km,meter,millimeter;
+    
+    // Constructor for Measurement class, with parameters 
+  Measurement(float a,float b,float c) {
+    km =a;
+    meter=b;
+    millimeter = c;
+    
+  }
+ 
+ // Methods for rounding the class variables
+  void km_roundoff() {
+      System.out.println(Math.round(km));   }
+
+    void m_roundoff() {
+      System.out.println(Math.round(meter));   }
+      void mm_roundoff() {
+      System.out.println(Math.round(millimeter));   }
+
+
+}
+
+

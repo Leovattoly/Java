@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Atom {
+    
+    int number;
+    String symbol;
+    String fullname;
+    float weight;
+    
+    public Atom() {
+    number = 0;  // leave the object in safe empty state
+    symbol = "";
+    fullname = "";
+    weight = 0;
+    }
+    
+    boolean accept()
+    {
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
+        System.out.print("Enter Atomic number- ");
+        number= sc.nextInt();
+        System.out.print("Enter symbol- ");
+        symbol= sc.nextLine();
+        System.out.print("Enter full name- ");
+        fullname= sc.nextLine();
+        System.out.print("Enter weight- ");
+        weight= sc.nextFloat();
+        return true;
+    }
+    
+    void display()
+    {
+        System.out.println("Atomic Information");
+        System.out.println("===================");
+        System.out.println("Atomic number: "+number);
+        System.out.println("Atomic symbol: "+symbol);
+        System.out.println("full name: "+fullname);
+        System.out.println("Atomic weight: "+weight);
+        
+        
+        
+    }
+    public static void Main(String[] args) {
+        
+    Atom myObj = new Atom();
+    myObj.accept();
+    myObj.display();
+  }
+}

@@ -1,0 +1,75 @@
+import java.util.*;
+
+class AverageMarks
+{
+  public static void main(String args[])
+  {
+   int i;
+ 
+   System.out.println("Enter the id: ");
+ 
+   Scanner sc=new Scanner(System.in);
+ 
+   int id=sc.nextInt();
+   
+   System.out.println("Enter the Name: ");
+   
+   String name= sc.nextLine();
+   
+    System.out.println("Enter number of subjects");
+    
+    int n=sc.nextInt();
+   
+ 
+   int[] a=new int[n];
+ 
+   System.out.println("Enter marks");
+ 
+   for( i=0;i<n;i++)
+   {
+     a[i]=sc.nextInt();
+   }
+ 
+   double avg=averageCalculation(a);
+ 
+   System.out.print("Average: "+avg);
+   grade(avg);
+ 
+ }
+ 
+ static double  averageCalculation(int a[])
+ {
+   double sum=0;
+ 
+   for(int  i=0;i<a.length;i++)
+   {
+     sum= sum+a[i];
+   }
+   
+   return  sum/a.length;
+  }
+  void grade(int avg)
+  {
+      switch ((int) avg / 10)
+      {
+        case 9:
+            System.out.println("Grade : O");
+            break;
+        case 8:
+            System.out.println("Grade : A+");
+            break;
+        case 7:
+            System.out.println("Grade : A");
+            break;
+        case 6:
+            System.out.println("Grade : B");
+            break;
+        case 5:
+            System.out.println("Grade : C");
+            break;
+        default:
+            System.out.println("Grade : D");
+            break;
+        }
+  }
+}
